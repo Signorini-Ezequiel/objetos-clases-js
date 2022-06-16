@@ -45,10 +45,29 @@ console.log(`El correo mail de ${newUser1.name} es: ${newUser1.mail}`);
 // - Precio
 // - Stock
 
-class Producos {
+// class Productos {
+//     constructor(name, price, stock) {
+//         this.name = name;
+//         this.price = price;
+//         this.stock = stock;
+//     }
+
+// }
+
+// Crear un método que permita en los objetos de esta clase disminuir el stock cuando el usuario realiza una compra
+
+class Productos {
     constructor(name, price, stock) {
         this.name = name;
         this.price = price;
         this.stock = stock;
     }
+    restarStock() {
+        this.stock = stock--;
+    }
 }
+
+let manzana = new Productos("manzana", 130, 16);
+console.log(manzana.stock);
+manzana.restarStock();
+console.log(manzana.stock);
