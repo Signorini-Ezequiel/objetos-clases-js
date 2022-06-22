@@ -58,16 +58,41 @@ console.log(`El correo mail de ${newUser1.name} es: ${newUser1.mail}`);
 
 class Productos {
     constructor(name, price, stock) {
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
+        this.nombre = name;
+        this.precio = price;
+        this.cant_disp = stock;
     }
     restarStock() {
-        this.stock = stock--;
+        this.cant_disp = this.cant_disp-1;
     }
 }
 
 let manzana = new Productos("manzana", 130, 16);
-console.log(manzana.stock);
+console.log(`El stock original es de: ${manzana.cant_disp}`);
 manzana.restarStock();
-console.log(manzana.stock);
+console.log(`El stock actual es de: ${manzana.cant_disp}`);
+
+// Crear una clase para un conjunto de productos cuyas propiedades son:
+// - nombre
+// - precio
+// - stock
+
+class Products {
+    constructor(nombre, precio, stock) {
+        this.name = nombre;
+        this.price = precio;
+        this.stock = stock;
+    }
+    agregarStock(cantidad) {
+        this.stock = this.stock + cantidad;
+    }
+}
+
+const chicken = new Products("chicken", 600, 123);
+console.log(chicken);
+
+
+// Crear un método que permita agregar una cantidad de stock dada
+console.log(`El stock original es de: ${chicken.stock}`);
+chicken.agregarStock(5);
+console.log(`El stock actual es de: ${chicken.stock}`);
